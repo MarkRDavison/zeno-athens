@@ -18,23 +18,6 @@ public class AthensApiWebApplicationFactory : WebApplicationFactory<Startup>, IC
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        Console.WriteLine("Directory: {0}", Directory.GetCurrentDirectory());
-        foreach (var f in Directory.EnumerateFiles(Directory.GetCurrentDirectory()))
-        {
-            Console.WriteLine(" - File: {0}", f);
-        }
-
-        if (File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.integration.json")))
-        {
-            var content = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.integration.json"));
-            Console.WriteLine("appsettings.integration.json content");
-            Console.WriteLine(content);
-        }
-        else
-        {
-            Console.Error.WriteLine("appsettings.integration.json does not exist.");
-        }
-
         builder.ConfigureAppConfiguration((context, conf) => conf
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.integration.json", false));

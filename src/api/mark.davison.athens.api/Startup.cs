@@ -14,14 +14,8 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        Console.WriteLine("CONFIGURING APP SETTINGS");
         AppSettings = services.ConfigureSettingsServices<AppSettings>(Configuration);
         if (AppSettings == null) { throw new InvalidOperationException(); }
-
-        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
 
         // TODO: retrieve these
         AppSettings.DATABASE.MigrationAssemblyNames.Add(
@@ -57,10 +51,7 @@ public class Startup
             ));
 
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
-        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
+
         services.AddScoped<IRepository>(_ =>
             new AthensRepository(
                 _.GetRequiredService<IDbContextFactory<AthensDbContext>>(),

@@ -16,6 +16,7 @@ public class Program
             {
                 configurationBuilder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 configurationBuilder.AddJsonFile("appsettings.development.json", optional: true, reloadOnChange: true);
+                configurationBuilder.AddJsonFile("appsettings.integration.json", optional: true);
                 configurationBuilder.AddEnvironmentVariables();
             });
 }
