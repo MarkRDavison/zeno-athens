@@ -50,8 +50,9 @@ public class Startup
                 .Build()
             ));
 
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(Configuration["ATHENS"], new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
-        Console.WriteLine(AppSettings.DATABASE.CONNECTION_STRING);
+        Console.WriteLine("AppSettings.DATABASE.CONNECTION_STRING: {0}", AppSettings.DATABASE.CONNECTION_STRING);
 
         services.AddScoped<IRepository>(_ =>
             new AthensRepository(
