@@ -10,16 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.integration.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="appsettings.integration.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="JunitXml.TestLogger" Version="3.0.134" />
     <PackageReference Include="markdavison.common.server.test" Version="7.4.7" />
     <PackageReference Include="markdavison.common.test" Version="7.4.6" />
@@ -35,6 +25,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\mark.davison.athens.api\mark.davison.athens.api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.integration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
