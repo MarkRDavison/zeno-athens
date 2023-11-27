@@ -17,6 +17,7 @@ public class Startup
         AppSettings = services.ConfigureSettingsServices<AppSettings>(Configuration);
         if (AppSettings == null) { throw new InvalidOperationException(); }
 
+
         // TODO: retrieve these
         AppSettings.DATABASE.MigrationAssemblyNames.Add(
             DatabaseType.Postgres, "mark.davison.athens.api.migrations.postgres");
@@ -57,6 +58,15 @@ public class Startup
         }
         Console.WriteLine("AppSettings");
         Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+
+
+        Configuration.GetSection("ATHENS:DATABASE").Bind(AppSettings.DATABASE);
+
+
+        Console.WriteLine("AppSettings");
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+
+
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
         Console.WriteLine("AppSettings.DATABASE.CONNECTION_STRING: {0}", AppSettings.DATABASE.CONNECTION_STRING);
 
