@@ -29,6 +29,9 @@ jobs:
       - name: test
         working-directory: ./src
         run: dotnet test --filter "TestCategory!=UI"
+        env:
+          LOGIN:    ${{ secrets.LOGIN }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
   build-react:
     runs-on: ubuntu-latest

@@ -61,7 +61,8 @@ public class Startup
 
 
         Configuration.GetSection("ATHENS:DATABASE").Bind(AppSettings.DATABASE);
-
+        Console.WriteLine("ATHENS:DATABASE");
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(Configuration.GetSection("ATHENS:DATABASE"), new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
 
         Console.WriteLine("AppSettings");
         Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
