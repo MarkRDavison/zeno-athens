@@ -50,10 +50,13 @@ public class Startup
                 .Build()
             ));
 
+        Console.WriteLine("Configuration");
         foreach (var c in Configuration.AsEnumerable())
         {
             Console.WriteLine("Config: {0}: {1}", c.Key, System.Text.Json.JsonSerializer.Serialize(c.Value, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
         }
+        Console.WriteLine("AppSettings");
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
         Console.WriteLine("AppSettings.DATABASE.CONNECTION_STRING: {0}", AppSettings.DATABASE.CONNECTION_STRING);
 
