@@ -14,8 +14,14 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        Console.WriteLine("CONFIGURING APP SETTINGS");
         AppSettings = services.ConfigureSettingsServices<AppSettings>(Configuration);
         if (AppSettings == null) { throw new InvalidOperationException(); }
+
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(AppSettings, new System.Text.Json.JsonSerializerOptions
+        {
+            WriteIndented = true
+        }));
 
         // TODO: retrieve these
         AppSettings.DATABASE.MigrationAssemblyNames.Add(
