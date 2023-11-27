@@ -51,6 +51,7 @@ public class Startup
             ));
 
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
+        Console.WriteLine(AppSettings.DATABASE.CONNECTION_STRING);
 
         services.AddScoped<IRepository>(_ =>
             new AthensRepository(
