@@ -50,7 +50,10 @@ public class Startup
                 .Build()
             ));
 
-        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(Configuration["ATHENS"], new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+        foreach (var c in Configuration.AsEnumerable())
+        {
+            Console.WriteLine("Config: {0}", Configuration.AsEnumerable());
+        }
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
         Console.WriteLine("AppSettings.DATABASE.CONNECTION_STRING: {0}", AppSettings.DATABASE.CONNECTION_STRING);
 
