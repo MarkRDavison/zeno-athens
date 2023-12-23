@@ -1,0 +1,15 @@
+﻿<MudNavMenu>
+    <MudNavLink Href="@Routes.Dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Dashboard" Class="pt-6">Dashboard </MudNavLink>
+    <MudNavLink Href="@Routes.Upcoming" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.CalendarMonth">Upcoming</MudNavLink>
+    <MudNavLink Href="@Routes.Projects" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Layers">Projects</MudNavLink>
+    <MudNavLink Href="@Routes.Labels" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Label">Labels</MudNavLink>
+    <MudNavLink Href="@Routes.Teams" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.People">Teams</MudNavLink>
+    
+    <MudNavLink Href="@Routes.Favourites" Match="NavLinkMatch.Prefix" Class="pt-4">Favourites</MudNavLink>
+    @*foreach project in favourites*@
+
+    @*foreach filter in saved filters*@
+
+    @*foreach project - hierarchy*@
+
+</MudNavMenu>

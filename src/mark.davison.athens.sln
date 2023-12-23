@@ -31,21 +31,51 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.api.tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9FDCA6D9-E3D5-45AD-8F4F-53336BD7F3AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.models.dtos", "shared\mark.davison.athens.shared.models.dtos\mark.davison.athens.shared.models.dtos.csproj", "{B435DDF2-3992-4027-A039-A86E2142A9E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.models.dtos", "shared\mark.davison.athens.shared.models.dtos\mark.davison.athens.shared.models.dtos.csproj", "{B435DDF2-3992-4027-A039-A86E2142A9E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.commands", "shared\mark.davison.athens.shared.commands\mark.davison.athens.shared.commands.csproj", "{63F41E63-40B2-4E00-A504-17E59FEE597A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.commands", "shared\mark.davison.athens.shared.commands\mark.davison.athens.shared.commands.csproj", "{63F41E63-40B2-4E00-A504-17E59FEE597A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.queries", "shared\mark.davison.athens.shared.queries\mark.davison.athens.shared.queries.csproj", "{C809B455-FE4E-4916-AB08-D06BE40BF429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.queries", "shared\mark.davison.athens.shared.queries\mark.davison.athens.shared.queries.csproj", "{C809B455-FE4E-4916-AB08-D06BE40BF429}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.commands.test", "shared\test\mark.davison.athens.shared.commands.test\mark.davison.athens.shared.commands.test.csproj", "{37052A2A-A4EA-4324-866C-99C4CA645436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.commands.test", "shared\test\mark.davison.athens.shared.commands.test\mark.davison.athens.shared.commands.test.csproj", "{37052A2A-A4EA-4324-866C-99C4CA645436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.queries.test", "shared\test\mark.davison.athens.shared.queries.test\mark.davison.athens.shared.queries.test.csproj", "{73485E37-678D-4EDC-AE49-9FC5A3CAD584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.queries.test", "shared\test\mark.davison.athens.shared.queries.test\mark.davison.athens.shared.queries.test.csproj", "{73485E37-678D-4EDC-AE49-9FC5A3CAD584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.bff.web", "bff-web\mark.davison.athens.bff.web\mark.davison.athens.bff.web.csproj", "{C339CADD-2745-4D8E-BB64-03A27EB76767}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.bff.web", "bff-web\mark.davison.athens.bff.web\mark.davison.athens.bff.web.csproj", "{C339CADD-2745-4D8E-BB64-03A27EB76767}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A1637F96-7528-43B9-A83B-40A55FE95090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.bff.web.test", "bff-web\test\mark.davison.athens.bff.web.test\mark.davison.athens.bff.web.test.csproj", "{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.bff.web.test", "bff-web\test\mark.davison.athens.bff.web.test\mark.davison.athens.bff.web.test.csproj", "{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6AF52C5-15EA-4675-9846-4E0D8D7D7D98}"
+	ProjectSection(SolutionItems) = preProject
+		..\Docker\api.dockerfile = ..\Docker\api.dockerfile
+		..\Docker\bff-web.dockerfile = ..\Docker\bff-web.dockerfile
+		..\README.md = ..\README.md
+		..\Docker\web.dockerfile = ..\Docker\web.dockerfile
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.bff.common", "bff-common\mark.davison.athens.bff.common\mark.davison.athens.bff.common.csproj", "{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{256427A9-7764-42C1-BAD8-23FDC2D6E591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.ui", "web\mark.davison.athens.web.ui\mark.davison.athens.web.ui.csproj", "{A97EE717-413F-4D90-B76F-9AA07C2DB72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.components", "web\mark.davison.athens.web.components\mark.davison.athens.web.components.csproj", "{E47B5328-63FC-444F-8D4D-422E561D7850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F774B19F-06EC-414D-9971-DE76531F9AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.features", "web\mark.davison.athens.web.features\mark.davison.athens.web.features.csproj", "{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.services", "web\mark.davison.athens.web.services\mark.davison.athens.web.services.csproj", "{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.components.test", "web\test\mark.davison.athens.web.components.test\mark.davison.athens.web.components.test.csproj", "{024D5828-9661-47C4-8497-160FC9C5979E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.features.test", "web\test\mark.davison.athens.web.features.test\mark.davison.athens.web.features.test.csproj", "{0A92EB21-7178-4950-909A-9B28FD6E5D42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.services.test", "web\test\mark.davison.athens.web.services.test\mark.davison.athens.web.services.test.csproj", "{8A580B13-D0BE-48D3-8697-6298A25DBC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.ui.test", "web\test\mark.davison.athens.web.ui.test\mark.davison.athens.web.ui.test.csproj", "{74EC674F-D036-4B50-8438-E187735DE4ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +139,42 @@ Global
 		{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97EE717-413F-4D90-B76F-9AA07C2DB72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97EE717-413F-4D90-B76F-9AA07C2DB72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97EE717-413F-4D90-B76F-9AA07C2DB72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97EE717-413F-4D90-B76F-9AA07C2DB72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47B5328-63FC-444F-8D4D-422E561D7850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47B5328-63FC-444F-8D4D-422E561D7850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47B5328-63FC-444F-8D4D-422E561D7850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47B5328-63FC-444F-8D4D-422E561D7850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024D5828-9661-47C4-8497-160FC9C5979E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024D5828-9661-47C4-8497-160FC9C5979E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024D5828-9661-47C4-8497-160FC9C5979E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024D5828-9661-47C4-8497-160FC9C5979E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A92EB21-7178-4950-909A-9B28FD6E5D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A92EB21-7178-4950-909A-9B28FD6E5D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A92EB21-7178-4950-909A-9B28FD6E5D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A92EB21-7178-4950-909A-9B28FD6E5D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A580B13-D0BE-48D3-8697-6298A25DBC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A580B13-D0BE-48D3-8697-6298A25DBC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A580B13-D0BE-48D3-8697-6298A25DBC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A580B13-D0BE-48D3-8697-6298A25DBC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EC674F-D036-4B50-8438-E187735DE4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EC674F-D036-4B50-8438-E187735DE4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EC674F-D036-4B50-8438-E187735DE4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EC674F-D036-4B50-8438-E187735DE4ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +198,16 @@ Global
 		{C339CADD-2745-4D8E-BB64-03A27EB76767} = {2F0897BE-6567-44B3-8030-3634461FFB0A}
 		{A1637F96-7528-43B9-A83B-40A55FE95090} = {2F0897BE-6567-44B3-8030-3634461FFB0A}
 		{1C3ED49E-2CE6-4885-A33E-BF11EEDF95D4} = {A1637F96-7528-43B9-A83B-40A55FE95090}
+		{FA0B94E9-AACD-44D8-95C5-0A77C9BE3E36} = {F821870F-DB4D-4472-BEBD-2A7164BFA942}
+		{A97EE717-413F-4D90-B76F-9AA07C2DB72A} = {256427A9-7764-42C1-BAD8-23FDC2D6E591}
+		{E47B5328-63FC-444F-8D4D-422E561D7850} = {256427A9-7764-42C1-BAD8-23FDC2D6E591}
+		{F774B19F-06EC-414D-9971-DE76531F9AC9} = {256427A9-7764-42C1-BAD8-23FDC2D6E591}
+		{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB} = {256427A9-7764-42C1-BAD8-23FDC2D6E591}
+		{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D} = {256427A9-7764-42C1-BAD8-23FDC2D6E591}
+		{024D5828-9661-47C4-8497-160FC9C5979E} = {F774B19F-06EC-414D-9971-DE76531F9AC9}
+		{0A92EB21-7178-4950-909A-9B28FD6E5D42} = {F774B19F-06EC-414D-9971-DE76531F9AC9}
+		{8A580B13-D0BE-48D3-8697-6298A25DBC10} = {F774B19F-06EC-414D-9971-DE76531F9AC9}
+		{74EC674F-D036-4B50-8438-E187735DE4ED} = {F774B19F-06EC-414D-9971-DE76531F9AC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {203F8C74-DF4A-4DF5-942E-8C2E8B6D92CA}

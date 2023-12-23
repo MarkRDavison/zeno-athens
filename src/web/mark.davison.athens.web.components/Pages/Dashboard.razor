@@ -1,0 +1,55 @@
+﻿@using mark.davison.athens.web.components.Shared
+@attribute [Route(Routes.Root)]
+@inject IAuthenticationContext authContext
+
+<MudStack>
+    <MudText Class="text-centered" Typo="Typo.h4">Hello <span>@authContext.User?.given_name</span>!</MudText>
+    
+    <MudStack Row AlignItems="AlignItems.Center">
+        <MudTextField
+            Adornment="Adornment.Start"
+            AdornmentIcon="@Icons.Material.Filled.Checklist"
+            T="string"
+            Placeholder="Add a new task..."
+            Variant="Variant.Outlined"
+            Immediate="true"
+            OnKeyDown="@OnKeyDown"
+            @bind-Text="NewTaskName"></MudTextField>
+        <MudButton 
+            ButtonType="ButtonType.Submit" 
+            Color="Color.Primary" 
+            StartIcon="@Icons.Material.Filled.Add" 
+            Variant="Variant.Filled" 
+            Size="Size.Large" 
+            Disabled="@string.IsNullOrEmpty(NewTaskName)"
+            IconSize="Size.Large"
+            OnClick="@AddTaskInstance">ADD</MudButton>
+     </MudStack>
+
+     @if (RecentlyViewedProjects.Any())
+     {
+         <TitledSection Title="Last viewed">
+             <div></div>
+         </TitledSection>
+     }
+
+     <TitledSection Title="Current tasks">
+         @if (CurrentTasks.Any())
+         {
+             <MudPaper Class="pa-4">
+                @foreach (var task in CurrentTasks)
+                {
+                    <MudItem>
+                        @task
+                    </MudItem>
+                }
+            </MudPaper>
+         }
+         else 
+         {
+            
+            <MudText Class="mt-6 text-centered" Typo="Typo.h5">You've done everything, congrats!</MudText>
+          
+         }
+     </TitledSection>
+</MudStack>

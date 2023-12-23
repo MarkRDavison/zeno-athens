@@ -1,0 +1,28 @@
+﻿@inject ICQRSDispatcher _actionDispatcher;
+@inject IAuthenticationContext _authContext
+@inject IStateHelper _stateHelper;
+
+@if (_authContext.IsAuthenticated)
+{
+    <MudContainer Class="pa-6">
+        @ChildContent
+    </MudContainer>
+}
+
+@code {
+
+    [Parameter, EditorRequired]
+    public RenderFragment? ChildContent { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (_authContext.IsAuthenticated)
+        {
+            // await _stateHelper.FetchLookups(); // TODO:
+            //await _actionDispatcher.Dispatch<UpdateLookupsAction>(CancellationToken.None);
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+}

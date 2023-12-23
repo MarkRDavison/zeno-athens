@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="markdavison.common.client" Version="8.0.1" />
+    <PackageReference Include="MudBlazor" Version="6.11.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\mark.davison.athens.web.features\mark.davison.athens.web.features.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
