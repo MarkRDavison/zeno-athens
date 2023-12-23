@@ -1,8 +1,6 @@
 api:
-  tag: latest    
-
+  tag: v0.0.1
 bffweb:
-  tag: latest    
-
+  tag: v0.0.1
 web:
-  tag: latest    
+  tag: v0.0.1
