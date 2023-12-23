@@ -21,6 +21,7 @@ public class CreateTaskInstanceCommandTests : ApiIntegrationTestBase
         Assert.AreEqual(request.Title, response.Value.Title);
         Assert.AreNotEqual(Guid.Empty, response.Value.Id);
     }
+
     [TestMethod]
     public async Task CreateTaskInstance_ForInvalidTask_Fails()
     {

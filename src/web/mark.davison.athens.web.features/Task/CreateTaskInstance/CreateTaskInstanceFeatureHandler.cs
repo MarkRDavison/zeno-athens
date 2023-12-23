@@ -21,7 +21,8 @@ public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstan
 
         return new CreateTaskInstanceFeatureResponse
         {
-            Errors = [.. response.Errors]
+            Errors = [.. response.Errors],
+            Warnings = [.. response.Warnings]
         };
     }
 }
