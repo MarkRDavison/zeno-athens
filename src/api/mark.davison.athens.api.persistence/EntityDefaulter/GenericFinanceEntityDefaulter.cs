@@ -12,6 +12,11 @@ public class GenericAthensEntityDefaulter<TEntity> : IEntityDefaulter<TEntity>
 
     public Task DefaultAsync(TEntity entity, User user)
     {
+        if (entity.Id == default(Guid))
+        {
+            entity.Id = Guid.NewGuid();
+        }
+
         if (entity.UserId == default(Guid))
         {
             entity.UserId = user.Id;

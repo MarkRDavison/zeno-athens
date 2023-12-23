@@ -25,7 +25,9 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
         var repository = scope.ServiceProvider.GetRequiredService<IRepository>();
         await using (repository.BeginTransaction())
         {
-            await repository.UpsertEntityAsync(CurrentUser, CancellationToken.None);
+            await repository.UpsertEntitiesAsync(
+                [CurrentUser, AlternateUser],
+                CancellationToken.None);
         }
         await SeedTestData();
     }
@@ -40,6 +42,15 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
         First = "integration",
         Last = "test",
         Email = "integration.test@gmail.com"
+    };
+    protected User AlternateUser { get; } = new User
+    {
+        Id = Guid.NewGuid(),
+        Sub = Guid.NewGuid(),
+        Username = "alternate.test",
+        First = "alternate",
+        Last = "test",
+        Email = "alternate.test@gmail.com"
     };
 
     protected T GetRequiredService<T>() where T : notnull

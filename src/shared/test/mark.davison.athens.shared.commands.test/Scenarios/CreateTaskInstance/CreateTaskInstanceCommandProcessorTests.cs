@@ -28,7 +28,7 @@ public class CreateTaskInstanceCommandProcessorTests
             .UpsertEntityAsync(
                 Arg.Any<TaskInstance>(),
                 Arg.Any<CancellationToken>())
-            .ReturnsForAnyArgs(_ => _.ArgAt<TaskInstance>(0));
+            .ReturnsForAnyArgs(_ => _.Arg<TaskInstance>());
 
         var response = await processor.ProcessAsync(request, currentUserContext, CancellationToken.None);
 

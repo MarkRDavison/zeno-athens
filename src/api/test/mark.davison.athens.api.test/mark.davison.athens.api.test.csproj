@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scenarios\Commands\CreateTaskInstanceCommandTests.cs~RF8bd3603.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JunitXml.TestLogger" Version="3.0.134" />
     <PackageReference Include="markdavison.common.server.test" Version="8.0.1" />
     <PackageReference Include="markdavison.common.test" Version="8.0.1" />
