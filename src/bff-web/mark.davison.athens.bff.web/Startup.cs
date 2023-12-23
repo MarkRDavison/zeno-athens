@@ -89,6 +89,8 @@ public class Startup
 
             endpoints
                 .UseAuthenticationEndpoints();
+
+            MapProxyCQRSPost(endpoints, "/api/create-task-command");// TODO: Source generator/proxy middleware for /api/* or at least a wildcard for commands.queries???
         });
     }
 

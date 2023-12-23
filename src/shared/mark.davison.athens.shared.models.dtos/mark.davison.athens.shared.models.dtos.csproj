@@ -10,4 +10,8 @@
     <PackageReference Include="markdavison.common" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Scenarios\Queries\" />
+  </ItemGroup>
+
 </Project>

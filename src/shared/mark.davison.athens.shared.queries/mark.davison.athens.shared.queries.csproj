@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\mark.davison.athens.shared.models.dtos\mark.davison.athens.shared.models.dtos.csproj" />
+    <PackageReference Include="markdavison.common.server" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\mark.davison.athens.shared.utilities\mark.davison.athens.shared.utilities.csproj" />
   </ItemGroup>
 
 </Project>

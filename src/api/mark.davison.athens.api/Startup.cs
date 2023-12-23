@@ -1,7 +1,4 @@
-﻿using mark.davison.common.server.abstractions.Identification;
-using mark.davison.common.server.Endpoints;
-
-namespace mark.davison.athens.api;
+﻿namespace mark.davison.athens.api;
 
 [UseCQRSServer(typeof(DtosRootType), typeof(CommandsRootType), typeof(QueriesRootType))]
 public class Startup
@@ -20,7 +17,7 @@ public class Startup
         AppSettings = services.ConfigureSettingsServices<AppSettings>(Configuration);
         if (AppSettings == null) { throw new InvalidOperationException(); }
 
-        // TODO: retrieve these
+        // TODO: retrieve these from assembly/class attribute
         AppSettings.DATABASE.MigrationAssemblyNames.Add(
             DatabaseType.Postgres, "mark.davison.athens.api.migrations.postgres");
         AppSettings.DATABASE.MigrationAssemblyNames.Add(
@@ -53,7 +50,6 @@ public class Startup
                 .Build()
             ));
 
-
         services.UseDatabase<AthensDbContext>(AppSettings.PRODUCTION_MODE, AppSettings.DATABASE);
 
         services.AddScoped<IRepository>(_ =>
@@ -68,11 +64,14 @@ public class Startup
                 _.GetRequiredService<ILogger<AthensRepository>>())
             );
 
-        services.AddSingleton<IDateService>(new DateService(DateService.DateMode.Utc));
-        services.UseCQRSServer();
         services
             .AddHttpClient()
-            .AddHttpContextAccessor();
+            .AddHttpContextAccessor()
+            .AddSingleton<IDateService>(new DateService(DateService.DateMode.Utc))
+            .UseAthensPersistence()
+            .UseCommandCQRS()
+            .UseQueryCQRS()
+            .UseCQRSServer();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

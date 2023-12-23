@@ -1,5 +1,11 @@
 ﻿global using mark.davison.athens.api.models.configuration.EntityConfiguration;
+global using mark.davison.athens.api.persistence.EntityDefaulter;
+global using mark.davison.athens.shared.models;
 global using mark.davison.athens.shared.models.Entities;
+global using mark.davison.common.persistence.EntityDefaulter;
 global using mark.davison.common.persistence.Repository;
+global using mark.davison.common.server.abstractions.Identification;
+global using mark.davison.common.Services;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;

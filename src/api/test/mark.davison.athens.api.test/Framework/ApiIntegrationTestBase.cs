@@ -2,8 +2,10 @@
 
 public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicationFactory, AppSettings>
 {
+    private IServiceScope? _serviceScope;
     public ApiIntegrationTestBase()
     {
+        _serviceScope = Services.CreateScope();
         _factory.ModifyCurrentUserContext = (serviceProvider, currentUserContext) =>
         {
             var appSettings = serviceProvider.GetRequiredService<IOptions<AppSettings>>();
@@ -39,4 +41,13 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
         Last = "test",
         Email = "integration.test@gmail.com"
     };
+
+    protected T GetRequiredService<T>() where T : notnull
+    {
+        if (_serviceScope == null)
+        {
+            throw new NullReferenceException();
+        }
+        return _serviceScope!.ServiceProvider.GetRequiredService<T>();
+    }
 }

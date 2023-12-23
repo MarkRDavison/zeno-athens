@@ -1,6 +1,2 @@
-﻿namespace mark.davison.athens.shared.models;
-
-public class GlobalUsings
-{
-
-}
+﻿global using mark.davison.common.server.abstractions;
+global using mark.davison.common.server.abstractions.Identification;

@@ -1,16 +1,5 @@
 ﻿namespace mark.davison.athens.api.test.Framework;
 
-public class AthensFinanceHttpRepository : HttpRepository
-{
-    public AthensFinanceHttpRepository(string baseUri, JsonSerializerOptions options) : base(baseUri, new HttpClient(), options)
-    {
-
-    }
-    public AthensFinanceHttpRepository(string baseUri, HttpClient client, JsonSerializerOptions options) : base(baseUri, client, options)
-    {
-
-    }
-}
 
 public class AthensApiWebApplicationFactory : WebApplicationFactory<Startup>, ICommonWebApplicationFactory<AppSettings>
 {
@@ -31,19 +20,10 @@ public class AthensApiWebApplicationFactory : WebApplicationFactory<Startup>, IC
 
     protected virtual void ConfigureServices(IServiceCollection services)
     {
-        //services.AddTransient<IFinanceDataSeeder, FinanceDataSeeder>(_ => // TODO: Remove lambda???
-        //    new FinanceDataSeeder(
-        //        _.GetRequiredService<IServiceScopeFactory>(),
-        //        _.GetRequiredService<IOptions<AppSettings>>()
-        //    ));
-        //services.UseDataSeeders();
-
         services
             .AddHttpClient()
             .AddHttpContextAccessor();
 
-        //services.UseCQRSServer();
-        //services.AddCommandCQRS();
         services.AddScoped<ICurrentUserContext, CurrentUserContext>(_ =>
         {
             var context = new CurrentUserContext();
