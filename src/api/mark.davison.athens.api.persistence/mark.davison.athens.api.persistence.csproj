@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EntityDefaulter\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="markdavison.common.persistence" Version="8.0.1" />
   </ItemGroup>
 

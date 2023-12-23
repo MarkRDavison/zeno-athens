@@ -1,7 +1,4 @@
-﻿using mark.davison.common.server.abstractions;
-using mark.davison.common.server.abstractions.Identification;
-
-namespace mark.davison.athens.shared.models;
+﻿namespace mark.davison.athens.shared.models;
 
 public class AthensEntity : BaseEntity
 {

@@ -1,7 +1,4 @@
-﻿using mark.davison.athens.api.test.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace mark.davison.athens.api.test.Health;
+﻿namespace mark.davison.athens.api.test.Health;
 
 [TestClass]
 public class HealthCheckTests : ApiIntegrationTestBase

@@ -1,6 +1,6 @@
-﻿@using mark.davison.athens.web.components.Shared
-@attribute [Route(Routes.Root)]
+﻿@attribute [Route(Routes.Root)]
 @inject IAuthenticationContext authContext
+@inject ICQRSDispatcher _dispatcher
 
 <MudStack>
     <MudText Class="text-centered" Typo="Typo.h4">Hello <span>@authContext.User?.given_name</span>!</MudText>

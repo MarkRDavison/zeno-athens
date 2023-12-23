@@ -1,1 +1,9 @@
+global using mark.davison.athens.shared.commands.Scenarios.CreateTaskInstance;
+global using mark.davison.athens.shared.models.dtos.Scenarios.Commands.CreateTaskInstance;
+global using mark.davison.athens.shared.models.Entities;
+global using mark.davison.athens.shared.validation;
+global using mark.davison.common.persistence.EntityDefaulter;
+global using mark.davison.common.server.abstractions.Authentication;
+global using mark.davison.common.server.abstractions.Repository;
 global using Microsoft.VisualStudio.TestTools.UnitTesting;
+global using NSubstitute;

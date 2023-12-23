@@ -1,5 +1,8 @@
 global using mark.davison.athens.api.Configuration;
+global using mark.davison.athens.api.test.Framework;
+global using mark.davison.athens.shared.models.dtos.Scenarios.Commands.CreateTaskInstance;
 global using mark.davison.common.server.abstractions.Authentication;
+global using mark.davison.common.server.abstractions.CQRS;
 global using mark.davison.common.server.abstractions.Identification;
 global using mark.davison.common.server.abstractions.Repository;
 global using mark.davison.common.server.Authentication;
@@ -13,5 +16,6 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
+global using Microsoft.VisualStudio.TestTools.UnitTesting;
 global using System.Security.Claims;
 global using System.Text.Json;
