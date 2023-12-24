@@ -1,4 +1,4 @@
-.valid.modified:not([type=checkbox]) {
+valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }
 
@@ -83,4 +83,23 @@ code {
 
 .text-centered {
     text-align: center !important;
+}
+
+.project-card-item {
+    aspect-ratio: 5/4;
+}
+
+.project-card-name {
+    overflow: hidden;
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    line-clamp: 3;
+}
+
+.project-paper-color {
+    border-left-style: solid;
+    border-left-width: thick;
+    border-left-color: magenta;
 }
