@@ -1,4 +1,5 @@
-﻿global using mark.davison.athens.web.features.Task.CreateTaskInstance;
+﻿global using mark.davison.athens.shared.models.dtos.Shared;
+global using mark.davison.athens.web.features.Task.CreateTaskInstance;
 global using mark.davison.common.client.abstractions.Authentication;
 global using mark.davison.common.client.abstractions.CQRS;
 global using mark.davison.common.client.CQRS;

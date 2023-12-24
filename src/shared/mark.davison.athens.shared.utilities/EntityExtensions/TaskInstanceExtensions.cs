@@ -7,6 +7,7 @@ public static class TaskInstanceExtensions
         return new TaskInstanceDto
         {
             Id = taskInstance.Id,
+            ProjectId = taskInstance.ProjectId,
             Title = taskInstance.Title
         };
     }

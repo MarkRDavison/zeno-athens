@@ -8,7 +8,7 @@ public static class DependencyInjectionExtensions
         // TODO: Source gen/reflection to do this as well as create the handlers
         services.AddTransient<ICommandValidator<CreateTaskInstanceCommandRequest, CreateTaskInstanceCommandResponse>, CreateTaskInstanceCommandValidator>();
         services.AddTransient<ICommandProcessor<CreateTaskInstanceCommandRequest, CreateTaskInstanceCommandResponse>, CreateTaskInstanceCommandProcessor>();
-
+        services.AddScoped<ICreateTaskInstanceCache, CreateTaskInstanceCache>();
         return services;
     }
 }

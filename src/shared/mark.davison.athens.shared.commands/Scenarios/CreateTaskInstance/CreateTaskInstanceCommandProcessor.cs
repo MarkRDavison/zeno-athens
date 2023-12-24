@@ -4,14 +4,17 @@ public class CreateTaskInstanceCommandProcessor : ICommandProcessor<CreateTaskIn
 {
     private readonly IRepository _repository;
     private readonly IEntityDefaulter<TaskInstance> _entityDefaulter;
+    private readonly ICreateTaskInstanceCache _createTaskInstanceCache;
 
     public CreateTaskInstanceCommandProcessor(
         IRepository repository,
-        IEntityDefaulter<TaskInstance> entityDefaulter
+        IEntityDefaulter<TaskInstance> entityDefaulter,
+        ICreateTaskInstanceCache createTaskInstanceCache
     )
     {
         _repository = repository;
         _entityDefaulter = entityDefaulter;
+        _createTaskInstanceCache = createTaskInstanceCache;
     }
 
     public async Task<CreateTaskInstanceCommandResponse> ProcessAsync(CreateTaskInstanceCommandRequest request, ICurrentUserContext currentUserContext, CancellationToken cancellationToken)
@@ -20,6 +23,7 @@ public class CreateTaskInstanceCommandProcessor : ICommandProcessor<CreateTaskIn
         {
             var taskInstance = new TaskInstance
             {
+                ProjectId = request.ProjectId ?? _createTaskInstanceCache.DefaultProjectId,
                 Title = request.Title
             };
 
