@@ -6,5 +6,11 @@ public class ProjectEntityConfiguration : AthensEntityConfiguration<Project>
     {
         builder
             .Property(_ => _.Name);
+
+        builder
+            .Property(_ => _.Description);
+
+        builder
+            .Property(_ => _.Colour);
     }
 }
