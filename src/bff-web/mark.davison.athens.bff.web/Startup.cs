@@ -90,9 +90,10 @@ public class Startup
             endpoints
                 .UseAuthenticationEndpoints();
 
-            MapProxyCQRSGet(endpoints, "/api/fetch-task-instances-query");// TODO: Source generator/proxy middleware for /api/* or at least a wildcard for commands.queries???
+            // TODO: Source generator/proxy middleware for /api/* or at least a wildcard for commands.queries???
+            MapProxyCQRSGet(endpoints, "/api/fetch-task-instances-query");
 
-            MapProxyCQRSPost(endpoints, "/api/create-task-command");// TODO: Source generator/proxy middleware for /api/* or at least a wildcard for commands.queries???
+            MapProxyCQRSPost(endpoints, "/api/create-task-command");
         });
     }
 
