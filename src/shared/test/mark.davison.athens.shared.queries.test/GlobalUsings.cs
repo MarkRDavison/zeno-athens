@@ -1,5 +1,7 @@
+global using mark.davison.athens.shared.models.dtos.Scenarios.Queries.FetchProjects;
 global using mark.davison.athens.shared.models.dtos.Scenarios.Queries.FetchTaskInstances;
 global using mark.davison.athens.shared.models.Entities;
+global using mark.davison.athens.shared.queries.Scenarios.FetchProjects;
 global using mark.davison.athens.shared.queries.Scenarios.FetchTaskInstances;
 global using mark.davison.common.server.abstractions.Authentication;
 global using mark.davison.common.server.abstractions.Identification;

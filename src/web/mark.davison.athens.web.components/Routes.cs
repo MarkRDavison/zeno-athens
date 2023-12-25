@@ -9,5 +9,6 @@ public class Routes
     public const string Labels = "/labels";
     public const string Teams = "/teams";
     public const string Favourites = "/favourites";
+    public const string UserSettings_General = "/user/settings/general";
 
 }

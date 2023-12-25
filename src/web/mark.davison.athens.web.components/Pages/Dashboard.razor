@@ -1,4 +1,5 @@
 ﻿@attribute [Route(Routes.Root)]
+@inherits ComponentWithState
 @inject IAuthenticationContext authContext
 @inject ICQRSDispatcher _dispatcher
 
@@ -34,22 +35,28 @@
      }
 
      <TitledSection Title="Current tasks">
-         @if (CurrentTasks.Any())
-         {
-             <MudPaper Class="pa-4">
-                @foreach (var task in CurrentTasks)
+        @if (TaskInstanceListState.Instance.TaskInstances.Any())
+        {
+            <MudPaper Class="pa-4">
+                @foreach (var task in TaskInstanceListState.Instance.TaskInstances)
                 {
                     <MudItem>
                         @task.Title
                     </MudItem>
                 }
             </MudPaper>
-         }
-         else 
-         {
+        }
+        else if (_stateLoading)
+        {
+            <MudPaper Class="pa-4">
+                <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-4" />
+            </MudPaper>
+        }
+        else 
+        {
             
             <MudText Class="mt-6 text-centered" Typo="Typo.h5">You've done everything, congrats!</MudText>
           
-         }
+        }
      </TitledSection>
 </MudStack>

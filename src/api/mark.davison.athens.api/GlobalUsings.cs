@@ -5,6 +5,7 @@ global using mark.davison.athens.api.persistence.Ignition;
 global using mark.davison.athens.shared.commands;
 global using mark.davison.athens.shared.commands.Ignition;
 global using mark.davison.athens.shared.models.dtos;
+global using mark.davison.athens.shared.models.Entities;
 global using mark.davison.athens.shared.queries;
 global using mark.davison.athens.shared.queries.Ignition;
 global using mark.davison.common.persistence;

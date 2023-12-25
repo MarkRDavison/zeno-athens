@@ -1,0 +1,6 @@
+﻿@inherits FormWithState<CreateProjectFormViewModel>
+
+<MudForm>
+    <MudTextField id="create-project-form-name" T="string" Label="Name" Required="true" @bind-Text="FormViewModel.Name" For="@(() => FormViewModel.Name)" />
+    <MudTextField id="create-project-form-description" T="string" Label="Description" Required="false" @bind-Text="FormViewModel.Description" For="@(() => FormViewModel.Description)" />
+</MudForm>

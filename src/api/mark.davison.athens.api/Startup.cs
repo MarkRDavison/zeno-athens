@@ -103,7 +103,8 @@ public class Startup
             endpoints
                 .UseGet<User>()
                 .UseGetById<User>()
-                .UsePost<User>();
+                .UsePost<User>()
+                .UsePost<UserOptions>();
         });
     }
 }

@@ -1,5 +1,6 @@
-﻿namespace mark.davison.athens.web.features.Task.CreateTaskInstance;
+﻿namespace mark.davison.athens.web.features.Tasks.CreateTaskInstance;
 
+// TODO: The naming of this isn't great, either needs to be merged with the other create one, or renamed
 public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>
 {
     private readonly IClientHttpRepository _repository;
@@ -21,6 +22,7 @@ public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstan
 
         return new CreateTaskInstanceFeatureResponse
         {
+            Value = response.Value,
             Errors = [.. response.Errors],
             Warnings = [.. response.Warnings]
         };

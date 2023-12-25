@@ -59,29 +59,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.bff.com
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{256427A9-7764-42C1-BAD8-23FDC2D6E591}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.ui", "web\mark.davison.athens.web.ui\mark.davison.athens.web.ui.csproj", "{A97EE717-413F-4D90-B76F-9AA07C2DB72A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.ui", "web\mark.davison.athens.web.ui\mark.davison.athens.web.ui.csproj", "{A97EE717-413F-4D90-B76F-9AA07C2DB72A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.components", "web\mark.davison.athens.web.components\mark.davison.athens.web.components.csproj", "{E47B5328-63FC-444F-8D4D-422E561D7850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.components", "web\mark.davison.athens.web.components\mark.davison.athens.web.components.csproj", "{E47B5328-63FC-444F-8D4D-422E561D7850}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F774B19F-06EC-414D-9971-DE76531F9AC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.features", "web\mark.davison.athens.web.features\mark.davison.athens.web.features.csproj", "{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.features", "web\mark.davison.athens.web.features\mark.davison.athens.web.features.csproj", "{46CD80BA-FE4F-4031-BE1D-B151F0F77EFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.services", "web\mark.davison.athens.web.services\mark.davison.athens.web.services.csproj", "{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.services", "web\mark.davison.athens.web.services\mark.davison.athens.web.services.csproj", "{CD951C0E-522E-45EF-AB2B-656A3F4F6F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.components.test", "web\test\mark.davison.athens.web.components.test\mark.davison.athens.web.components.test.csproj", "{024D5828-9661-47C4-8497-160FC9C5979E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.components.test", "web\test\mark.davison.athens.web.components.test\mark.davison.athens.web.components.test.csproj", "{024D5828-9661-47C4-8497-160FC9C5979E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.features.test", "web\test\mark.davison.athens.web.features.test\mark.davison.athens.web.features.test.csproj", "{0A92EB21-7178-4950-909A-9B28FD6E5D42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.features.test", "web\test\mark.davison.athens.web.features.test\mark.davison.athens.web.features.test.csproj", "{0A92EB21-7178-4950-909A-9B28FD6E5D42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.services.test", "web\test\mark.davison.athens.web.services.test\mark.davison.athens.web.services.test.csproj", "{8A580B13-D0BE-48D3-8697-6298A25DBC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.services.test", "web\test\mark.davison.athens.web.services.test\mark.davison.athens.web.services.test.csproj", "{8A580B13-D0BE-48D3-8697-6298A25DBC10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.web.ui.test", "web\test\mark.davison.athens.web.ui.test\mark.davison.athens.web.ui.test.csproj", "{74EC674F-D036-4B50-8438-E187735DE4ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.web.ui.test", "web\test\mark.davison.athens.web.ui.test\mark.davison.athens.web.ui.test.csproj", "{74EC674F-D036-4B50-8438-E187735DE4ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "markdavison.athens.web.ui.playwright", "web\test\markdavison.athens.web.ui.playwright\markdavison.athens.web.ui.playwright.csproj", "{93A35360-955B-4A7B-AB6D-1D3F8A294931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.utilities", "shared\mark.davison.athens.shared.utilities\mark.davison.athens.shared.utilities.csproj", "{1A9F774F-896B-46BC-B934-E61BFFC18BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.utilities", "shared\mark.davison.athens.shared.utilities\mark.davison.athens.shared.utilities.csproj", "{1A9F774F-896B-46BC-B934-E61BFFC18BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mark.davison.athens.shared.validation", "shared\mark.davison.athens.shared.validation\mark.davison.athens.shared.validation.csproj", "{5D41F42C-B5D8-4381-9B92-385A0F794175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mark.davison.athens.shared.validation", "shared\mark.davison.athens.shared.validation\mark.davison.athens.shared.validation.csproj", "{5D41F42C-B5D8-4381-9B92-385A0F794175}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

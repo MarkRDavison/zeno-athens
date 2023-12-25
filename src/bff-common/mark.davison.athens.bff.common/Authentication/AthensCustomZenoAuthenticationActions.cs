@@ -1,4 +1,6 @@
-﻿namespace mark.davison.athens.bff.common.Authentication;
+﻿using mark.davison.athens.shared.models.Entities;
+
+namespace mark.davison.athens.bff.common.Authentication;
 
 public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationActions
 {
@@ -25,6 +27,17 @@ public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationAc
                cancellationToken);
     }
 
+    private async Task UpsertUserOptions(User user, string token, CancellationToken cancellationToken)
+    {
+        await _httpRepository.UpsertEntityAsync(
+                new UserOptions
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = user.Id
+                },
+                HeaderParameters.Auth(token, user),
+                cancellationToken);
+    }
     private Task<User?> UpsertUser(UserProfile userProfile, string token, CancellationToken cancellationToken)
     {
         return _httpRepository.UpsertEntityAsync(
@@ -52,6 +65,11 @@ public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationAc
         if (user == null && !string.IsNullOrEmpty(token))
         {
             user = await UpsertUser(userProfile, token, cancellationToken);
+
+            if (user != null)
+            {
+                await UpsertUserOptions(user, token, cancellationToken);
+            }
 
             if (!_appSettings.Value.PRODUCTION_MODE && user != null)
             {

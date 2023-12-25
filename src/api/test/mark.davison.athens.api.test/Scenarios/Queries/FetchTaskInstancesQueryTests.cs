@@ -12,10 +12,10 @@ public class FetchTaskInstancesQueryTests : ApiIntegrationTestBase
         {
             _existingTasks.AddRange(await repository.UpsertEntitiesAsync(new List<TaskInstance>
             {
-                new(){ Id = Guid.NewGuid(), Title = "#1", UserId = CurrentUser.Id },
-                new(){ Id = Guid.NewGuid(), Title = "#2", UserId = CurrentUser.Id },
-                new(){ Id = Guid.NewGuid(), Title = "#3", UserId = CurrentUser.Id },
-                new(){ Id = Guid.NewGuid(), Title = "#4", UserId = AlternateUser.Id }
+                new(){ Id = Guid.NewGuid(), ProjectId = CurrentUserDefaultProject.Id, Title = "#1", UserId = CurrentUser.Id },
+                new(){ Id = Guid.NewGuid(), ProjectId = CurrentUserDefaultProject.Id, Title = "#2", UserId = CurrentUser.Id },
+                new(){ Id = Guid.NewGuid(), ProjectId = CurrentUserDefaultProject.Id, Title = "#3", UserId = CurrentUser.Id },
+                new(){ Id = Guid.NewGuid(), ProjectId = CurrentUserDefaultProject.Id, Title = "#4", UserId = AlternateUser.Id }
             }, CancellationToken.None));
         }
     }

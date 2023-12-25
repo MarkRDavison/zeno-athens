@@ -28,6 +28,27 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
             await repository.UpsertEntitiesAsync(
                 [CurrentUser, AlternateUser],
                 CancellationToken.None);
+
+            await repository.UpsertEntitiesAsync(
+                [CurrentUserDefaultProject, AlternateUserDefaultProject],
+                CancellationToken.None);
+
+            await repository.UpsertEntitiesAsync(
+                [
+                    new UserOptions
+                    {
+                        Id = Guid.NewGuid(),
+                        UserId = CurrentUser.Id,
+                        DefaultProjectId = CurrentUserDefaultProject.Id
+                    },
+                    new UserOptions
+                    {
+                        Id = Guid.NewGuid(),
+                        UserId = AlternateUser.Id,
+                        DefaultProjectId = AlternateUserDefaultProject.Id
+                    }
+                ],
+                CancellationToken.None);
         }
         await SeedTestData();
     }
@@ -51,6 +72,19 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
         First = "alternate",
         Last = "test",
         Email = "alternate.test@gmail.com"
+    };
+
+    protected Project CurrentUserDefaultProject => new Project
+    {
+        Id = new Guid("2713C572-C768-4448-9039-040F2C304230"),
+        Name = "Default",
+        UserId = CurrentUser.Id
+    };
+    protected Project AlternateUserDefaultProject => new Project
+    {
+        Id = new Guid("7A3B52F3-4CA1-4A29-9C3A-88CE50634845"),
+        Name = "Default",
+        UserId = AlternateUser.Id
     };
 
     protected T GetRequiredService<T>() where T : notnull

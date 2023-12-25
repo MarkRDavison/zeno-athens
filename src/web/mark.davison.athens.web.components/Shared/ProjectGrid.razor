@@ -1,0 +1,11 @@
+﻿<MudGrid Class="mt-4" Justify="Justify.FlexStart">
+    @foreach (var project in Projects)
+    {
+        <MudItem xs="3" Class="project-card-item">
+            @*TODO: SASS MAGIC -> class project-card-paper, basically just groups all the other classes*@
+            <MudPaper Class="mud-height-full rounded-lg d-flex flex-column-reverse pa-6">
+                <MudText Class="project-card-name" Typo="Typo.h5">@project.Name</MudText>
+                </MudPaper>
+            </MudItem>
+    }
+</MudGrid>

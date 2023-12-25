@@ -1,3 +1,20 @@
 ﻿@attribute [Route(Routes.Projects)]
+@inherits ComponentWithState
+@inject IDialogService _dialogService
 
-<h1>Projects - todo</h1>
+<MudStack>
+    <MudStack Row>
+         <MudCheckBox T="bool" Label="Show Archived"></MudCheckBox>
+         <MudButton 
+            Class="ml-auto"
+            ButtonType="ButtonType.Submit" 
+            Color="Color.Primary" 
+            StartIcon="@Icons.Material.Filled.Add" 
+            Variant="Variant.Filled" 
+            Size="Size.Small" 
+            IconSize="Size.Large"
+            OnClick="OpenCreateProjectModal">NEW PROJECT</MudButton>
+    </MudStack>
+    @*TODO: Loading, pass it through like on the dashboard*@
+    <ProjectGrid Projects="ProjectState.Instance.Projects"  />
+</MudStack>

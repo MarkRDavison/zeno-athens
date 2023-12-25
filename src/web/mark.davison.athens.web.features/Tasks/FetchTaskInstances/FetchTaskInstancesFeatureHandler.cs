@@ -1,6 +1,6 @@
-﻿namespace mark.davison.athens.web.features.Task.FetchTaskInstances;
+﻿namespace mark.davison.athens.web.features.Tasks.FetchTaskInstances;
 
-public class FetchTaskInstancesFeatureHandler : ICommandHandler<FetchTaskInstancesFeatureRequest, FetchTaskInstancesFeatureResponse>
+public class FetchTaskInstancesFeatureHandler : IQueryHandler<FetchTaskInstancesFeatureRequest, FetchTaskInstancesFeatureResponse>
 {
     private readonly IClientHttpRepository _repository;
 
@@ -11,7 +11,7 @@ public class FetchTaskInstancesFeatureHandler : ICommandHandler<FetchTaskInstanc
         _repository = repository;
     }
 
-    public async Task<FetchTaskInstancesFeatureResponse> Handle(FetchTaskInstancesFeatureRequest command, CancellationToken cancellation)
+    public async Task<FetchTaskInstancesFeatureResponse> Handle(FetchTaskInstancesFeatureRequest query, CancellationToken cancellation)
     {
         var request = new FetchTaskInstancesQueryRequest();
 

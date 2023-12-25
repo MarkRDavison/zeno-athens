@@ -13,4 +13,6 @@ public class AthensDbContext : DbContext
     }
 
     public DbSet<TaskInstance> TaskInstances => Set<TaskInstance>();
+    public DbSet<Project> Projects => Set<Project>();
+    public DbSet<UserOptions> UserOptions => Set<UserOptions>();
 }

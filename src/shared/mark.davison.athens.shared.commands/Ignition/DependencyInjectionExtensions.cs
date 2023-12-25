@@ -9,6 +9,11 @@ public static class DependencyInjectionExtensions
         services.AddTransient<ICommandValidator<CreateTaskInstanceCommandRequest, CreateTaskInstanceCommandResponse>, CreateTaskInstanceCommandValidator>();
         services.AddTransient<ICommandProcessor<CreateTaskInstanceCommandRequest, CreateTaskInstanceCommandResponse>, CreateTaskInstanceCommandProcessor>();
 
+        services.AddTransient<ICommandValidator<CreateProjectCommandRequest, CreateProjectCommandResponse>, CreateProjectCommandValidator>();
+        services.AddTransient<ICommandProcessor<CreateProjectCommandRequest, CreateProjectCommandResponse>, CreateProjectCommandProcessor>();
+
+        services.AddScoped<ICreateTaskInstanceCache, CreateTaskInstanceCache>();
+
         return services;
     }
 }
