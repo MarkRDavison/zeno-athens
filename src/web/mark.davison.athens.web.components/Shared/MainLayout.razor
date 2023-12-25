@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject IAuthenticationConfig authConfig
 
 <MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" />
 <MudDialogProvider />
@@ -9,8 +10,16 @@
         <MudIconButton Icon="@Icons.Material.Outlined.QuestionMark" Color="Color.Inherit" />
         <MudText Typo="Typo.h4" Class="app-title">Tasker</MudText>
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Edge="Edge.End" />
+        <MudSpacer />        
+        <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" Size="Size.Large">
+            <ActivatorContent>
+                <MudIconButton Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Edge="Edge.End" />
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem><a href="@Routes.UserSettings_General">Settings</a></MudMenuItem>
+                <MudMenuItem><a href="@authConfig.LogoutEndpoint">Logout</a></MudMenuItem>
+            </ChildContent>
+        </MudMenu>
     </MudAppBar>
     <MudDrawer Elevation="2" @bind-Open="@_drawerOpen" ClipMode="DrawerClipMode.Always">
         <NavMenu />

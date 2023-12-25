@@ -1,4 +1,4 @@
-﻿namespace mark.davison.athens.web.features.Task.CreateTaskInstance;
+﻿namespace mark.davison.athens.web.features.Tasks.CreateTaskInstance;
 
 public class CreateTaskInstanceFeatureRequest : ICommand<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>
 {

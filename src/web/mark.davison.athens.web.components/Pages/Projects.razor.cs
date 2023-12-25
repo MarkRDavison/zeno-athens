@@ -1,22 +1,35 @@
-﻿using mark.davison.athens.shared.models.dtos.Shared;
-
-namespace mark.davison.athens.web.components.Pages;
+﻿namespace mark.davison.athens.web.components.Pages;
 
 public partial class Projects
 {
-    public List<ProjectDto> LoadedProjects { get; } = new();
+    private IStateInstance<ProjectState> ProjectState { get; set; } = default!;
 
-    protected override Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        LoadedProjects.AddRange(
-            [
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #1" },
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #2" },
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #3" },
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #4" },
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #5" },
-                new ProjectDto { Id = Guid.NewGuid(), Name = "Project #6 but some really long text that will overflow the container that it is in" },
-            ]);
-        return base.OnInitializedAsync();
+        ProjectState = GetState<ProjectState>();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await EnsureStateLoaded();
+    }
+    private async Task EnsureStateLoaded()
+    {
+        await Dispatcher.Dispatch<FetchProjectsFeatureRequest, FetchProjectsFeatureResponse>(CancellationToken.None);
+    }
+
+    private async Task OpenCreateProjectModal()
+    {
+        var options = new DialogOptions
+        {
+            CloseOnEscapeKey = true
+        };
+        var param = new DialogParameters<Modal<CreateProjectModalViewModel, CreateProjectFormViewModel, CreateProjectForm>>
+        {
+            { _ => _.PrimaryText, "Save" },
+            { _ => _.Instance, null }
+        };
+        var dialog = _dialogService.Show<Modal<CreateProjectModalViewModel, CreateProjectFormViewModel, CreateProjectForm>>("Create Project", param, options);
+        await dialog.Result;
     }
 }

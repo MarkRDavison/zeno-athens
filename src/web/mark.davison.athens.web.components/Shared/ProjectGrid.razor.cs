@@ -3,5 +3,5 @@
 public partial class ProjectGrid
 {
     [Parameter, EditorRequired]
-    public required List<ProjectDto> Projects { get; set; }
+    public required IEnumerable<ProjectDto> Projects { get; set; }
 }

@@ -6,6 +6,9 @@ public static class DependecyInjectionExtensions
     {
         services.AddMudServices();
 
+        services.AddTransient<CreateProjectModalViewModel>();
+        services.AddTransient<IFormSubmission<CreateProjectFormViewModel>, CreateProjectFormSubmission>();
+
         return services;
     }
     private static void AddSingleton<TAbstraction, TImplementation>(IServiceCollection services) where TAbstraction : class where TImplementation : class, TAbstraction

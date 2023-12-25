@@ -2,4 +2,6 @@
 
 public interface IStateHelper
 {
+    IDisposable Force();
+    TimeSpan DefaultRefetchTimeSpan { get; }
 }

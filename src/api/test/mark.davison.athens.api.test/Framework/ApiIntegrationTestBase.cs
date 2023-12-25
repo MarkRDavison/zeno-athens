@@ -28,9 +28,11 @@ public class ApiIntegrationTestBase : IntegrationTestBase<AthensApiWebApplicatio
             await repository.UpsertEntitiesAsync(
                 [CurrentUser, AlternateUser],
                 CancellationToken.None);
+
             await repository.UpsertEntitiesAsync(
                 [CurrentUserDefaultProject, AlternateUserDefaultProject],
                 CancellationToken.None);
+
             await repository.UpsertEntitiesAsync(
                 [
                     new UserOptions

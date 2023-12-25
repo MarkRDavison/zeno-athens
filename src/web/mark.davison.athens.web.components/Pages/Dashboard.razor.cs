@@ -1,39 +1,45 @@
-﻿using mark.davison.athens.shared.models.dtos.Shared;
-using mark.davison.athens.web.features.Task.FetchTaskInstances;
-
-namespace mark.davison.athens.web.components.Pages;
+﻿namespace mark.davison.athens.web.components.Pages;
 
 public partial class Dashboard
 {
-
+    private bool _stateLoading;
     public List<object> RecentlyViewedProjects { get; } = new();
-    public List<TaskInstanceDto> CurrentTasks { get; } = new();
 
-    protected override async Task OnInitializedAsync()
+    private IStateInstance<TaskInstanceListState> TaskInstanceListState { get; set; } = default!;
+
+    protected override void OnInitialized()
     {
-        var response = await _dispatcher.Dispatch<FetchTaskInstancesFeatureRequest, FetchTaskInstancesFeatureResponse>(CancellationToken.None);
+        TaskInstanceListState = GetState<TaskInstanceListState>();
+    }
 
-        if (!response.Success)
-        {
-            Console.Error.WriteLine("FAILED, TODO: TOAST: {0}", string.Join(",", response.Errors));
-        }
+    protected override async Task OnParametersSetAsync()
+    {
+        await EnsureStateLoaded();
+    }
 
-        if (response.Value != null)
-        {
-            CurrentTasks.AddRange(response.Value);
-        }
+    private async Task EnsureStateLoaded()
+    {
+        _stateLoading = true;
+        await Dispatcher.Dispatch(
+            new FetchTaskInstanceListStateAction(true),
+            CancellationToken.None
+        );
+        _stateLoading = false;
     }
 
     public async Task AddTaskInstance()
     {
         if (!string.IsNullOrEmpty(NewTaskName))
         {
+            // TODO: Have knowledge of whether current user has a default project set up
+            // if not, then dont allow tasks to be submitted without specifying a project
             var title = NewTaskName;
             NewTaskName = string.Empty;
-            CurrentTasks.Add(new TaskInstanceDto
-            {
-                Title = title
-            });
+            //CurrentTasks.Add(new TaskInstanceDto
+            //{
+            //    Title = title
+            //});
+            // TODO: Add local version?? optimistic
 
             var response = await _dispatcher.Dispatch<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>(new CreateTaskInstanceFeatureRequest
             {

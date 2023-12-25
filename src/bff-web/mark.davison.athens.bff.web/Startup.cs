@@ -92,8 +92,10 @@ public class Startup
 
             // TODO: Source generator/proxy middleware for /api/* or at least a wildcard for commands.queries???
             MapProxyCQRSGet(endpoints, "/api/fetch-task-instances-query");
+            MapProxyCQRSGet(endpoints, "/api/fetch-projects-query");
 
             MapProxyCQRSPost(endpoints, "/api/create-task-command");
+            MapProxyCQRSPost(endpoints, "/api/create-project-command");
         });
     }
 

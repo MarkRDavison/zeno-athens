@@ -1,4 +1,6 @@
-﻿global using mark.davison.athens.shared.commands.Scenarios.CreateTaskInstance;
+﻿global using mark.davison.athens.shared.commands.Scenarios.CreateProject;
+global using mark.davison.athens.shared.commands.Scenarios.CreateTaskInstance;
+global using mark.davison.athens.shared.models.dtos.Scenarios.Commands.CreateProject;
 global using mark.davison.athens.shared.models.dtos.Scenarios.Commands.CreateTaskInstance;
 global using mark.davison.athens.shared.models.Entities;
 global using mark.davison.athens.shared.utilities.EntityExtensions;
