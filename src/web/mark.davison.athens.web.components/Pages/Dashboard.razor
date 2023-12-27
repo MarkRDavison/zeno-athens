@@ -15,16 +15,16 @@
             Variant="Variant.Outlined"
             Immediate="true"
             OnKeyDown="@OnKeyDown"
-            @bind-Text="NewTaskName"></MudTextField>
+            @bind-Text="QuickAddText"></MudTextField>
         <MudButton 
             ButtonType="ButtonType.Submit" 
             Color="Color.Primary" 
             StartIcon="@Icons.Material.Filled.Add" 
             Variant="Variant.Filled" 
             Size="Size.Large" 
-            Disabled="@string.IsNullOrEmpty(NewTaskName)"
+            Disabled="@string.IsNullOrEmpty(QuickAddText)"
             IconSize="Size.Large"
-            OnClick="@AddTaskInstance">ADD</MudButton>
+            OnClick="@CreateTaskInstance">ADD</MudButton>
      </MudStack>
 
      @if (RecentlyViewedProjects.Any())
