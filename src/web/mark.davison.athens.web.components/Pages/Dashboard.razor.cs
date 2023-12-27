@@ -27,24 +27,19 @@ public partial class Dashboard
         _stateLoading = false;
     }
 
-    public async Task AddTaskInstance()
+    public async Task CreateTaskInstance()
     {
-        if (!string.IsNullOrEmpty(NewTaskName))
+        if (!string.IsNullOrEmpty(QuickAddText))
         {
             // TODO: Have knowledge of whether current user has a default project set up
             // if not, then dont allow tasks to be submitted without specifying a project
-            var title = NewTaskName;
-            NewTaskName = string.Empty;
-            //CurrentTasks.Add(new TaskInstanceDto
-            //{
-            //    Title = title
-            //});
-            // TODO: Add local version?? optimistic
+            var quickAddText = QuickAddText;
+            QuickAddText = string.Empty;
 
             var response = await _dispatcher.Dispatch<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>(new CreateTaskInstanceFeatureRequest
             {
-                Title = title
-            }, CancellationToken.None);
+                TaskCreateInfo = TaskQuickAddProcessor.ResolveTaskQuickAddCommand(quickAddText)
+            }, CancellationToken.None); ;
 
             if (!response.Success)
             {
@@ -54,12 +49,12 @@ public partial class Dashboard
         }
     }
 
-    public string NewTaskName { get; set; } = string.Empty;
+    public string QuickAddText { get; set; } = string.Empty;
     public async void OnKeyDown(KeyboardEventArgs args)
     {
         if (args.Key == "Enter")
         {
-            await AddTaskInstance();
+            await CreateTaskInstance();
         }
     }
 }

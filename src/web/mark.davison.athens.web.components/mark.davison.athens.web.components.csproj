@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\shared\mark.davison.athens.shared.logic\mark.davison.athens.shared.logic.csproj" />
     <ProjectReference Include="..\mark.davison.athens.web.features\mark.davison.athens.web.features.csproj" />
   </ItemGroup>
 

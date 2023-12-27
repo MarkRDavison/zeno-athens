@@ -18,7 +18,7 @@ public class CreateNewTaskInstanceActionHandler : IActionHandler<CreateNewTaskIn
     {
         var request = new CreateTaskInstanceFeatureRequest
         {
-            Title = action.Title
+            TaskCreateInfo = action.TaskCreateInfo
         };
 
         var response = await _dispatcher.Dispatch<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>(request, cancellation);

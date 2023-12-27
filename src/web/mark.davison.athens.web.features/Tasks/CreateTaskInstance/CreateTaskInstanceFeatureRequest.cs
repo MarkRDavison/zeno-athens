@@ -2,5 +2,5 @@
 
 public class CreateTaskInstanceFeatureRequest : ICommand<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>
 {
-    public string Title { get; set; } = string.Empty;
+    public CreateTaskDto TaskCreateInfo { get; set; } = new() { Valid = false };
 }

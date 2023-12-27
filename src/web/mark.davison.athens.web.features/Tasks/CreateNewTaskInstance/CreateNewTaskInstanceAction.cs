@@ -2,5 +2,5 @@
 
 public class CreateNewTaskInstanceAction : IAction<CreateNewTaskInstanceAction>
 {
-    public string Title { get; set; } = string.Empty;
+    public CreateTaskDto TaskCreateInfo { get; set; } = new() { Valid = false };
 }

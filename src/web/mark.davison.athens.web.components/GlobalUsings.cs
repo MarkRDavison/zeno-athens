@@ -1,4 +1,5 @@
-﻿global using mark.davison.athens.shared.models.dtos.Shared;
+﻿global using mark.davison.athens.shared.logic.QuickAdd;
+global using mark.davison.athens.shared.models.dtos.Shared;
 global using mark.davison.athens.web.components.CommonCandidates.Form;
 global using mark.davison.athens.web.components.Forms.CreateProject;
 global using mark.davison.athens.web.features.Project;

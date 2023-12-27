@@ -13,9 +13,11 @@ public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstan
     }
     public async Task<CreateTaskInstanceFeatureResponse> Handle(CreateTaskInstanceFeatureRequest command, CancellationToken cancellation)
     {
+        // TODO: Add local version?? optimistic
         var request = new CreateTaskInstanceCommandRequest
         {
-            Title = command.Title
+            Title = command.TaskCreateInfo.Name,
+            ProjectId = command.TaskCreateInfo.ProjectId
         };
 
         var response = await _repository.Post<CreateTaskInstanceCommandResponse, CreateTaskInstanceCommandRequest>(request, cancellation);
