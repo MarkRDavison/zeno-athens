@@ -4,12 +4,15 @@
 public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstanceFeatureRequest, CreateTaskInstanceFeatureResponse>
 {
     private readonly IClientHttpRepository _repository;
+    private readonly IStateStore _stateStore;
 
     public CreateTaskInstanceFeatureHandler(
-        IClientHttpRepository repository
+        IClientHttpRepository repository,
+        IStateStore stateStore
     )
     {
         _repository = repository;
+        _stateStore = stateStore;
     }
     public async Task<CreateTaskInstanceFeatureResponse> Handle(CreateTaskInstanceFeatureRequest command, CancellationToken cancellation)
     {
@@ -21,6 +24,12 @@ public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstan
         };
 
         var response = await _repository.Post<CreateTaskInstanceCommandResponse, CreateTaskInstanceCommandRequest>(request, cancellation);
+
+        if (response.Success && response.Value != null)
+        {
+            var existing = _stateStore.GetState<TaskInstanceListState>().Instance.TaskInstances;
+            _stateStore.SetState(new TaskInstanceListState([.. existing, response.Value]));
+        }
 
         return new CreateTaskInstanceFeatureResponse
         {
