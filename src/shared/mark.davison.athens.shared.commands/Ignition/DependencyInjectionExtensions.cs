@@ -12,6 +12,8 @@ public static class DependencyInjectionExtensions
         services.AddTransient<ICommandValidator<CreateProjectCommandRequest, CreateProjectCommandResponse>, CreateProjectCommandValidator>();
         services.AddTransient<ICommandProcessor<CreateProjectCommandRequest, CreateProjectCommandResponse>, CreateProjectCommandProcessor>();
 
+        services.AddTransient<ICommandProcessor<UpdateTaskInstanceCommandRequest, UpdateTaskInstanceCommandResponse>, UpdateTaskInstanceCommandProcessor>();
+
         services.AddScoped<ICreateTaskInstanceCache, CreateTaskInstanceCache>();
 
         return services;

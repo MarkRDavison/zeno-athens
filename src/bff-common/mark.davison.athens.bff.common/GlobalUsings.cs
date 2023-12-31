@@ -1,4 +1,5 @@
 ﻿global using mark.davison.athens.bff.common.Configuration;
+global using mark.davison.athens.shared.models.Entities;
 global using mark.davison.common.Identification;
 global using mark.davison.common.persistence.Configuration;
 global using mark.davison.common.Repository;

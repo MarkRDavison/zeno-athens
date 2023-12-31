@@ -105,6 +105,18 @@ public class Startup
                 .UseGetById<User>()
                 .UsePost<User>()
                 .UsePost<UserOptions>();
+
+            // Used to create a bunch of data on first log in
+            if (!AppSettings.PRODUCTION_MODE)
+            {
+                endpoints
+                    .UseGet<Project>()
+                    .UseGetById<Project>()
+                    .UsePost<Project>()
+                    .UseGet<TaskInstance>()
+                    .UseGetById<TaskInstance>()
+                    .UsePost<TaskInstance>();
+            }
         });
     }
 }

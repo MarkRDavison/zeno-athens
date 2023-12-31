@@ -9,7 +9,8 @@ public static class ProjectExtensions
             Id = project.Id,
             Name = project.Name,
             Description = project.Description,
-            ParentId = project.ParentProjectId
+            ParentId = project.ParentProjectId,
+            Colour = project.Colour
         };
     }
 }

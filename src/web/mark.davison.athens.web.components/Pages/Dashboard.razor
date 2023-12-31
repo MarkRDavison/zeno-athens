@@ -37,12 +37,14 @@
      <TitledSection Title="Current tasks">
         @if (TaskInstanceListState.Instance.TaskInstances.Any())
         {
-            <MudPaper Class="pa-4">
-                @foreach (var task in TaskInstanceListState.Instance.TaskInstances)
+            <MudPaper Class="pa-2">
+                @foreach (var task in TaskInstanceListState.Instance.TaskInstances.OrderBy(_ => _.IsCompleted).ThenBy(_ => _.Title))
                 {
-                    <MudItem>
-                        @task.Title
-                    </MudItem>
+                    var project = ProjectState.Instance.Projects.FirstOrDefault(_ => _.Id == task.ProjectId);
+                    <TaskInstanceRow 
+                        Instance="@task" 
+                        ProjectInstance="@project" 
+                        ToggleFavouriteStatus="@(async () => await ToggleFavouriteStatus(task))" />
                 }
             </MudPaper>
         }
@@ -54,9 +56,7 @@
         }
         else 
         {
-            
-            <MudText Class="mt-6 text-centered" Typo="Typo.h5">You've done everything, congrats!</MudText>
-          
+            <MudText Class="mt-6 text-centered" Typo="Typo.h5">You've done everything, congrats!</MudText>          
         }
      </TitledSection>
 </MudStack>

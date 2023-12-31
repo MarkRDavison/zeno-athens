@@ -1,0 +1,27 @@
+﻿<MudStack Row Spacing="1" Class="task-instance-row align-center">
+     <MudCheckBox Class="checkbox-margin-reduced" @bind-Value="Instance.IsCompleted" />
+     @if (!string.IsNullOrEmpty(ProjectInstance?.Colour))
+     {
+        var colourStyle = $"background: {ProjectInstance.Colour};";
+        <div class="colour-circle" style="@colourStyle"></div>
+     }
+     <span class="task-instance-row-text text-unselectable completed-line-through" data-completed="@Instance.IsCompleted.ToString()">
+         @{
+            var tooltipContext = $"This task belongs to the project '{ProjectInstance?.Name}'";
+         }
+        <MudTooltip Text="@tooltipContext">
+            @*TODO: The text-decoration: line-through is lost within the tooltip*@
+            <a class="muted-link-text completed-line-through" href="#" data-completed="@Instance.IsCompleted.ToString()">@ProjectInstance?.Name</a>
+        </MudTooltip>
+        <a href="#">@Instance.Title</a>
+    </span>
+    <div class="float-left mr-2 favourite-container">
+        @if (Instance.IsFavourite)
+        {
+            <MudIcon Class="favourite-icon" Icon="@Icons.Material.Filled.Star" onclick="@ToggleFavouriteStatus" />
+        }
+        else {
+            <MudIcon Class="non-favourite-icon" Icon="@Icons.Material.Filled.StarOutline" onclick="@ToggleFavouriteStatus" />
+        }
+    </div>
+</MudStack>

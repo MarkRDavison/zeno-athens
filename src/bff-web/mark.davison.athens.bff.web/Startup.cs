@@ -96,6 +96,7 @@ public class Startup
 
             MapProxyCQRSPost(endpoints, "/api/create-task-command");
             MapProxyCQRSPost(endpoints, "/api/create-project-command");
+            MapProxyCQRSPost(endpoints, "/api/update-task-instance-command");
         });
     }
 
