@@ -6,5 +6,13 @@ public partial class TaskInstanceEntityConfiguration : AthensEntityConfiguration
     {
         builder
             .Property(_ => _.Title);
+        builder
+            .Property(_ => _.Description);
+        builder
+            .Property(_ => _.IsCompleted);
+        builder
+            .Property(_ => _.IsFavourite);
+        builder
+            .Property(_ => _.DueTime);
     }
 }

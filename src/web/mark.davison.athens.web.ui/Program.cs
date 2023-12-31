@@ -15,7 +15,9 @@ builder.Services
     .AddSingleton<IAuthenticationContext, AuthenticationContext>()
     .AddSingleton<IStateHelper, StateHelper>()
     .AddSingleton<IClientNavigationManager, ClientNavigationManager>()
-    .AddSingleton<IClientHttpRepository>(_ => new AthensClientHttpRepository(_.GetRequiredService<IAuthenticationConfig>().BffBase, _.GetRequiredService<IHttpClientFactory>()))
+    .AddSingleton<IClientHttpRepository>(_ => new AthensClientHttpRepository(
+                _.GetRequiredService<IAuthenticationConfig>().BffBase,
+                _.GetRequiredService<IHttpClientFactory>()))
     .UseCQRS(typeof(Program), typeof(FeaturesRootType));
 
 builder.Services

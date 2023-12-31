@@ -1,6 +1,4 @@
-﻿using mark.davison.athens.shared.models.Entities;
-
-namespace mark.davison.athens.bff.common.Authentication;
+﻿namespace mark.davison.athens.bff.common.Authentication;
 
 public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationActions
 {
@@ -73,7 +71,7 @@ public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationAc
 
             if (!_appSettings.Value.PRODUCTION_MODE && user != null)
             {
-                // await UpsertTestData(user, token, cancellationToken);
+                await UpsertTestData(user, token, cancellationToken);
             }
         }
 
@@ -83,5 +81,91 @@ public class AthensCustomZenoAuthenticationActions : ICustomZenoAuthenticationAc
         }
 
         return user;
+    }
+
+    private async Task UpsertTestData(User user, string token, CancellationToken cancellationToken)
+    {
+        var headers = HeaderParameters.Auth(token, user);
+
+        var defaultProjectId = Guid.NewGuid();
+
+        await _httpRepository.UpsertEntityAsync(
+                new Project
+                {
+                    Id = defaultProjectId,
+                    Name = "Default",
+                    UserId = user.Id,
+                    Colour = "#FF0000"
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new Project
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Project #1",
+                    UserId = user.Id,
+                    Colour = "#00FF00"
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new Project
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Project #2",
+                    UserId = user.Id,
+                    Colour = ""
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new Project
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Project #3",
+                    UserId = user.Id,
+                    Colour = "#0000FF"
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new TaskInstance
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Task #1",
+                    ProjectId = defaultProjectId,
+                    UserId = user.Id
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new TaskInstance
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Task #2",
+                    ProjectId = defaultProjectId,
+                    UserId = user.Id,
+                    IsFavourite = true
+                },
+                headers,
+                cancellationToken);
+
+        await _httpRepository.UpsertEntityAsync(
+                new TaskInstance
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Task #3",
+                    ProjectId = defaultProjectId,
+                    UserId = user.Id,
+                    IsCompleted = true
+                },
+                headers,
+                cancellationToken);
     }
 }

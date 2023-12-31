@@ -1,4 +1,6 @@
-﻿namespace mark.davison.athens.web.components.Pages;
+﻿using mark.davison.athens.web.features.Tasks.UpdateTaskInstance.UpdateTaskInstanceFavourite;
+
+namespace mark.davison.athens.web.components.Pages;
 
 public partial class Dashboard
 {
@@ -88,6 +90,23 @@ public partial class Dashboard
         if (args.Key == "Enter")
         {
             await CreateTaskInstance();
+        }
+    }
+
+    private async Task ToggleFavouriteStatus(TaskInstanceDto task)
+    {
+        var request = new UpdateTaskInstanceFavouriteRequest
+        {
+            TaskInstanceId = task.Id,
+            IsFavourite = !task.IsFavourite
+        };
+
+        var response = await Dispatcher.Dispatch<UpdateTaskInstanceFavouriteRequest, UpdateTaskInstanceFavouriteResponse>(request, CancellationToken.None);
+
+        if (!response.Success)
+        {
+            // TODO: Should this happen here at the call site or within the handler???
+            Console.Error.WriteLine("TODO: TOAST: ERROR SAVING TOGGLE TASK.ISFAVOURITE");
         }
     }
 }

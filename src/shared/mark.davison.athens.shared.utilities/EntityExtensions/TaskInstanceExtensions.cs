@@ -8,7 +8,10 @@ public static class TaskInstanceExtensions
         {
             Id = taskInstance.Id,
             ProjectId = taskInstance.ProjectId,
-            Title = taskInstance.Title
+            Title = taskInstance.Title,
+            DueTime = taskInstance.DueTime,
+            IsCompleted = taskInstance.IsCompleted,
+            IsFavourite = taskInstance.IsFavourite
         };
     }
 }

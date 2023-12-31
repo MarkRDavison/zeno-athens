@@ -14,6 +14,7 @@ public class CreateTaskInstanceFeatureHandler : ICommandHandler<CreateTaskInstan
         _repository = repository;
         _stateStore = stateStore;
     }
+
     public async Task<CreateTaskInstanceFeatureResponse> Handle(CreateTaskInstanceFeatureRequest command, CancellationToken cancellation)
     {
         // TODO: Add local version?? optimistic
