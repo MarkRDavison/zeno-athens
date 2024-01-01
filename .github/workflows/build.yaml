@@ -22,6 +22,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Install WebCompiler
+        run: dotnet tool install Excubo.WebCompiler --global
+
       - name: build
         working-directory: ./src
         run: dotnet build
