@@ -1,6 +1,6 @@
 api:
-  tag: v0.0.1
+  tag: v0.0.2
 bffweb:
-  tag: v0.0.1
+  tag: v0.0.2
 web:
-  tag: v0.0.1
+  tag: v0.0.2
