@@ -11,6 +11,7 @@ on:
 
 env:
   DOTNET_NOLOGO: true
+  CI_BUILD: true
 
 jobs:
   build:
@@ -24,6 +25,10 @@ jobs:
           
       - name: Install WebCompiler
         run: dotnet tool install Excubo.WebCompiler --global
+
+      - name: build web artifacts
+        working-directory: ./src
+        run: webcompiler ./web/mark.davison.athens.web.ui/compilerconfig.json
 
       - name: build
         working-directory: ./src
