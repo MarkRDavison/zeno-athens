@@ -14,7 +14,7 @@
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
-  <ItemGroup Condition="'CI_BUILD' != 'true'">
+  <ItemGroup Condition="'$(CI_BUILD)' != 'true'">
 	<PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
   </ItemGroup>
 	
