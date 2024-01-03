@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 as BUILD
 WORKDIR /app 
 
+ENV CI_BUILD=true
+
 COPY / /app/
 RUN dotnet restore
 RUN dotnet publish -c Release -o out bff-web/mark.davison.athens.bff.web/mark.davison.athens.bff.web.csproj
