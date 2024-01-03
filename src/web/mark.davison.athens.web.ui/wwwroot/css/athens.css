@@ -76,7 +76,7 @@
 
 .task-instance-row:hover {
   background: var(--mud-palette-primary-hover);
-  border-radius: 0.25rem;
+  border-radius: 0.254rem;
   cursor: pointer;
 }
 .task-instance-row:hover .favourite-container {
