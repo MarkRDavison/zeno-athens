@@ -23,20 +23,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
           
-      - name: Install WebCompiler
+      - name: install web compiler
         run: dotnet tool install Excubo.WebCompiler --global
 
       - name: build web artifacts
         working-directory: ./src
         run: webcompiler ./web/mark.davison.athens.web.ui/compilerconfig.json
         
-      - name: dump web artifacts - 1
-        working-directory: ./src
-        run: cat ./web/mark.davison.athens.web.ui/wwwroot/css/athens.css
-      - name: dump web artifacts - 2
-        working-directory: ./src
-        run: cat ./web/mark.davison.athens.web.ui/wwwroot/css/athens.min.css
-
       - name: build
         working-directory: ./src
         run: dotnet build
